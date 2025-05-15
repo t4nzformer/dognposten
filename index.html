@@ -5,10 +5,17 @@
   <title>Døgnposten</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Døgnposten – Rolige nyheter, én gang om dagen.">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #f5f2e9 !important;
+        color: #111 !important;
+      }
+    }
     body {
-      font-family: Georgia, serif;
-      background-color: #f7f7f7;
+      font-family: 'Literata', serif;
+      background-color: #f5f2e9;
       color: #111;
       margin: 4em auto;
       max-width: 640px;
@@ -32,48 +39,61 @@
     h2 {
       font-size: 1.2em;
       margin-top: 2em;
-      margin-bottom: 0.5em;
+      margin-bottom: 2em;
+      cursor: pointer;
+      user-select: none;
     }
     ul {
       list-style-type: disc;
       padding-left: 1.5em;
+      margin-top: 0.5em;
+      display: none;
+    }
+    ul.visible {
+      display: block;
     }
   </style>
 </head>
 <body>
   <h1>Døgnposten</h1>
   <div class="subtitle">Rolige nyheter, én gang om dagen</div>
-  <div class="date">15. mai 2025</div>
+  <div class="date">16. mai 2025</div>
 
-  <h2>Innenriks</h2>
-  <ul>
-    <li>Seks tenåringer er pågrepet i forbindelse med en knivstikking av en 16 år gammel gutt i Sandefjord den 1. mai. Hendelsen etterforskes som et drapsforsøk.</li>
+  <h2 onclick="toggleSection('section0')">Innenriks</h2>
+  <ul id="section0">
+    <li>Flere kommuner, inkludert Moskenes i Lofoten, vurderer sammenslåing med nabokommuner for å redusere gjeld, men møter motstand fra kommunalministeren. Moskenes kommune kan få 160 millioner kroner i gjeldskutt ved en slik sammenslåing. Kommunalministeren har imidlertid avslått flere forespørsler om sammenslåing.</li>
     <br/>
-    <li>En forsker fra Forsvarets forskningsinstitutt uttrykker bekymring for norsk sikkerhet i debatten om kjernekraftverk, spesielt med tanke på planene om å bygge et anlegg i Vardø, som ligger 60 kilometer fra Russland. Han mener at sikkerhetsaspektene ved en slik plassering ikke blir tilstrekkelig diskutert.</li>
+    <li>En bilfører mistet førerkortet etter å ha blitt målt til en hastighet på 130 km/t i en 80-sone. Hendelsen skjedde under en trafikkontroll utført av politiet. Førerkortbeslaget er en del av politiets arbeid for å bedre trafikksikkerheten.</li>
     <br/>
-    <li>Flere politiske partier i Norge forventer økte bevilgninger til Forsvaret i det reviderte nasjonalbudsjettet. Økningen er foreslått for å styrke landets forsvarsevne. Dette kommer i lys av den nåværende sikkerhetssituasjonen i Europa.</li>
+    <li>Artikkelen gir råd om hvordan man kan forberede seg til å løpe et maraton, inkludert å følge en treningsplan som gradvis øker distansen. Den understreker viktigheten av å variere treningen med både lange løp og kortere, raskere økter, samt å prioritere hvile og riktig ernæring. Forfatteren anbefaler også å lytte til kroppen for å unngå skader.</li>
     <br/>
   </ul>
 
-  <h2>Utenriks</h2>
-  <ul>
-    <li>Det er uenighet om tidspunktet for fredssamtalene om Ukraina som planlegges i Istanbul. Russiske kilder opplyser at samtalene skal starte klokken 09.00 torsdag, mens Ukraina hevder at det ikke er enighet om dette tidspunktet.</li>
+  <h2 onclick="toggleSection('section1')">Utenriks</h2>
+  <ul id="section1">
+    <li>En nyhetsartikkel avslører detaljer om fortiden til Syrias nye leder, som tidligere har vært involvert i jihadistaktiviteter. Han skal ha hatt begrensede ferdigheter med våpen, men var dyktig til å ri hest. Lekkasjene gir innsikt i hans bakgrunn og ferdigheter.</li>
     <br/>
-    <li>Delegasjoner fra Ukraina og Russland skal møtes i Istanbul, men det er ingen planlagt møte mellom presidentene Putin og Zelenskyj. Oppmerksomheten er rettet mot fraværet av et slikt toppmøte.</li>
+    <li>Boaz Bismuth, en nær politisk støttespiller av Benjamin Netanyahu, avviser anklager om folkemord knyttet til Israels militære handlinger på Gazastripen. Han beskriver anklagene som uriktige og villedende.</li>
     <br/>
-    <li>En tidligere diplomat har omtalt en gave i form av et luksusfly som "flyvende korrupsjon", noe som har skapt debatt i USA. Donald Trump har uttalt at det ville være uklokt å takke nei til et slikt fly. Saken har fått oppmerksomhet på grunn av de etiske implikasjonene rundt mottakelsen av dyre gaver.</li>
-    <br/>
-  </ul>
-
-  <h2>Kultur</h2>
-  <ul>
-    <li>På 17. mai er "Norge i rødt, hvitt og blått" den mest spilte låten i Norge. Sangen, fremført av Johanne, er en populær del av nasjonaldagsfeiringen.</li>
-    <br/>
-    <li>En norsk skuespiller har blitt nominert til Heddaprisen for sin debutprestasjon. Heddaprisen er en anerkjent teaterpris i Norge som hedrer fremragende prestasjoner innen scenekunst. Nominasjonen markerer en betydelig anerkjennelse av skuespillerens talent.</li>
-    <br/>
-    <li>Det Norske Kammerorkester, ledet av Terje Tønnesen, leverte en imponerende fremføring av verkene til Shostakovich, Strauss og Biber. Anmeldelsen roser orkesterets tolkning og musikalske dyktighet. Konserten ble beskrevet som en bemerkelsesverdig opplevelse.</li>
+    <li>Friedrich Merz, leder for det tyske partiet CDU, har uttalt at han ønsker å gjøre Tyskland til Europas sterkeste militærmakt. Dette representerer en betydelig endring fra Tysklands forsvarspolitikk de siste 30 årene. Eksperter på tysk forsvarspolitikk beskriver dette som et brudd med tidligere uttalelser og praksis.</li>
     <br/>
   </ul>
 
+  <h2 onclick="toggleSection('section2')">Kultur</h2>
+  <ul id="section2">
+    <li>Johanne sin låt er den mest spilte i Norge på 17. mai. Dette gjør den til en populær sang på nasjonaldagen.</li>
+    <br/>
+    <li>En norsk skuespiller har blitt nominert til Heddaprisen for sin debutprestasjon. Heddaprisen er en anerkjent utmerkelse innen norsk teater. Nominasjonen markerer en betydningsfull milepæl i skuespillerens karriere.</li>
+    <br/>
+    <li>Det Norske Kammerorkester, ledet av Terje Tønnesen, leverte en imponerende konsert med verk av Shostakovich, Strauss og Biber. Anmeldelsen roser orkesterets fremførelse og musikalske tolkning. Konserten ble beskrevet som en sterk og minneverdig opplevelse.</li>
+    <br/>
+  </ul>
+
+<script>
+  function toggleSection(id) {
+    var section = document.getElementById(id);
+    section.classList.toggle('visible');
+  }
+</script>
 </body>
 </html>
