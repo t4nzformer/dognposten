@@ -10,9 +10,9 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # --- Correct RSS Feeds per Category ---
 feeds = {
-    "🇳🇴 Innenriks": "https://www.nrk.no/norge/toppsaker.rss",
-    "🌍 Utenriks": "https://www.nrk.no/urix/toppsaker.rss",
-    "🎭 Kultur": "https://www.nrk.no/kultur/toppsaker.rss"
+    "Innenriks": "https://www.nrk.no/norge/toppsaker.rss",
+    "Utenriks": "https://www.nrk.no/urix/toppsaker.rss",
+    "Kultur": "https://www.nrk.no/kultur/toppsaker.rss"
 }
 
 def summarize(text):
